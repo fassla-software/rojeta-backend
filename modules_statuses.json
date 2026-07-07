@@ -1,3 +1,7 @@
 {
-    "Auth": true
+    "Auth": true,
+    "ServiceProvider": true,
+    "Appointment": true,
+    "Profile": true,
+    "Notification": true
 }
