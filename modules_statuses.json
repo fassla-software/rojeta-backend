@@ -3,5 +3,11 @@
     "ServiceProvider": true,
     "Appointment": true,
     "Profile": true,
-    "Notification": true
+    "Notification": true,
+    "Doctor": true,
+    "Booking": true,
+    "Financial": true,
+    "Hospital": true,
+    "Laboratory": true,
+    "Nursing": true
 }

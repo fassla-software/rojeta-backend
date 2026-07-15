@@ -1,0 +1,9 @@
+{
+    "name": "Nursing",
+    "alias": "nursing",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": ["Modules\\Nursing\\Providers\\NursingServiceProvider"],
+    "files": []
+}

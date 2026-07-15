@@ -583,6 +583,67 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Provider - Doctor",
+      "item": [
+        {"name": "Dashboard", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/dashboard", "host": ["{{base_url}}"], "path": ["doctor", "dashboard"]}}},
+        {"name": "Profile Summary", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/profile/summary", "host": ["{{base_url}}"], "path": ["doctor", "profile", "summary"]}}},
+        {"name": "Appointments", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/appointments", "host": ["{{base_url}}"], "path": ["doctor", "appointments"]}}},
+        {"name": "Patients", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/patients", "host": ["{{base_url}}"], "path": ["doctor", "patients"]}}},
+        {"name": "Profile", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/profile", "host": ["{{base_url}}"], "path": ["doctor", "profile"]}}},
+        {"name": "Schedule", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/schedule", "host": ["{{base_url}}"], "path": ["doctor", "schedule"]}}},
+        {"name": "Notifications", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/notifications", "host": ["{{base_url}}"], "path": ["doctor", "notifications"]}}},
+        {"name": "Analytics", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/analytics", "host": ["{{base_url}}"], "path": ["doctor", "analytics"]}}},
+        {"name": "Marketing Packages", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/marketing/packages", "host": ["{{base_url}}"], "path": ["doctor", "marketing", "packages"]}}},
+        {"name": "Settings", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/doctor/settings", "host": ["{{base_url}}"], "path": ["doctor", "settings"]}}}
+      ]
+    },
+    {
+      "name": "Provider - Booking",
+      "item": [
+        {"name": "Get Bookings", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/bookings?userType=laboratory", "host": ["{{base_url}}"], "path": ["bookings"], "query": [{"key": "userType", "value": "laboratory"}]}}},
+        {"name": "Update Booking Status", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "PATCH", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"status\": \"confirmed\"\n}"}, "url": {"raw": "{{base_url}}/bookings/1/status", "host": ["{{base_url}}"], "path": ["bookings", "1", "status"]}}}
+      ]
+    },
+    {
+      "name": "Provider - Financial",
+      "item": [
+        {"name": "Summary", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/financial/summary", "host": ["{{base_url}}"], "path": ["financial", "summary"]}}},
+        {"name": "Transactions", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/financial/transactions", "host": ["{{base_url}}"], "path": ["financial", "transactions"]}}}
+      ]
+    },
+    {
+      "name": "Provider - Hospital",
+      "item": [
+        {"name": "Dashboard", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/dashboard", "host": ["{{base_url}}"], "path": ["hospital", "dashboard"]}}},
+        {"name": "Appointments", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/appointments", "host": ["{{base_url}}"], "path": ["hospital", "appointments"]}}},
+        {"name": "Services", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/services", "host": ["{{base_url}}"], "path": ["hospital", "services"]}}},
+        {"name": "Specialties", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/specialties", "host": ["{{base_url}}"], "path": ["hospital", "specialties"]}}},
+        {"name": "ICU Rooms", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/icu-rooms", "host": ["{{base_url}}"], "path": ["hospital", "icu-rooms"]}}},
+        {"name": "Settings", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/hospital/settings", "host": ["{{base_url}}"], "path": ["hospital", "settings"]}}}
+      ]
+    },
+    {
+      "name": "Provider - Lab & Radiology",
+      "item": [
+        {"name": "Dashboard", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/dashboard", "host": ["{{base_url}}"], "path": ["lab", "dashboard"]}}},
+        {"name": "Services", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/services", "host": ["{{base_url}}"], "path": ["lab", "services"]}}},
+        {"name": "Branches", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/branches", "host": ["{{base_url}}"], "path": ["lab", "branches"]}}},
+        {"name": "Home Visit Config", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/home-visits/config", "host": ["{{base_url}}"], "path": ["lab", "home-visits", "config"]}}},
+        {"name": "Profile", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/profile", "host": ["{{base_url}}"], "path": ["lab", "profile"]}}},
+        {"name": "Settings", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/lab/settings", "host": ["{{base_url}}"], "path": ["lab", "settings"]}}}
+      ]
+    },
+    {
+      "name": "Provider - Nursing",
+      "item": [
+        {"name": "Dashboard", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/nursing/dashboard", "host": ["{{base_url}}"], "path": ["nursing", "dashboard"]}}},
+        {"name": "Services", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/nursing/services", "host": ["{{base_url}}"], "path": ["nursing", "services"]}}},
+        {"name": "Staff", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/nursing/staff", "host": ["{{base_url}}"], "path": ["nursing", "staff"]}}},
+        {"name": "Profile", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/nursing/profile", "host": ["{{base_url}}"], "path": ["nursing", "profile"]}}},
+        {"name": "Settings", "request": {"auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{token}}", "type": "string"}]}, "method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": {"raw": "{{base_url}}/nursing/settings", "host": ["{{base_url}}"], "path": ["nursing", "settings"]}}}
+      ]
     }
   ]
 }

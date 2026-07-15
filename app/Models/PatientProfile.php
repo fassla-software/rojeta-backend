@@ -8,6 +8,15 @@ class PatientProfile extends Model
 {
     protected $guarded = [];
 
+    protected function casts(): array
+    {
+        return [
+            'date_of_birth' => 'date',
+            'allergies' => 'array',
+            'chronic_conditions' => 'array',
+        ];
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
