@@ -89,4 +89,54 @@ class User extends Authenticatable
     {
         return $this->hasMany(Clinic::class, 'doctor_id');
     }
+
+    public function hospitalProfile()
+    {
+        return $this->hasOne(HospitalProfile::class);
+    }
+
+    public function laboratoryProfile()
+    {
+        return $this->hasOne(LaboratoryProfile::class);
+    }
+
+    public function radiologyProfile()
+    {
+        return $this->hasOne(RadiologyProfile::class);
+    }
+
+    public function nursingProfile()
+    {
+        return $this->hasOne(NursingProfile::class);
+    }
+
+    public function providerSettings()
+    {
+        return $this->hasOne(ProviderSetting::class);
+    }
+
+    public function workingHours()
+    {
+        return $this->hasMany(WorkingHour::class);
+    }
+
+    public function vacations()
+    {
+        return $this->hasMany(DoctorVacation::class, 'doctor_id');
+    }
+
+    public function financialTransactions()
+    {
+        return $this->hasMany(FinancialTransaction::class, 'provider_id');
+    }
+
+    public function bookingsAsProvider()
+    {
+        return $this->hasMany(Booking::class, 'provider_id');
+    }
+
+    public function workingHourOverrides()
+    {
+        return $this->hasMany(WorkingHourOverride::class);
+    }
 }

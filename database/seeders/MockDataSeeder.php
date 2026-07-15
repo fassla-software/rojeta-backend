@@ -40,6 +40,8 @@ class MockDataSeeder extends Seeder
                 'gender' => 'Male',
                 'points' => 2800,
                 'image' => 'https://i.pravatar.cc/150?u=patient1',
+                'allergies' => ['Penicillin', 'Aspirin'],
+                'chronic_conditions' => ['Hypertension', 'Diabetes Type 2'],
             ]
         );
 
@@ -105,6 +107,13 @@ class MockDataSeeder extends Seeder
                 'phone' => '022222222',
             ]
         );
+
+        $clinic1->update([
+            'working_hours' => [
+                'Monday' => ['start' => '09:00 AM', 'end' => '05:00 PM'],
+                'Wednesday' => ['start' => '09:00 AM', 'end' => '05:00 PM'],
+            ],
+        ]);
 
         // Doctor 2
         $doctor2 = User::firstOrCreate(
