@@ -135,6 +135,21 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class, 'provider_id');
     }
 
+    public function bookingsAsPatient()
+    {
+        return $this->hasMany(Booking::class, 'patient_id');
+    }
+
+    public function conversationsAsPatient()
+    {
+        return $this->hasMany(Conversation::class, 'patient_id');
+    }
+
+    public function conversationsAsDoctor()
+    {
+        return $this->hasMany(Conversation::class, 'doctor_id');
+    }
+
     public function workingHourOverrides()
     {
         return $this->hasMany(WorkingHourOverride::class);

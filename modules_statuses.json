@@ -9,5 +9,6 @@
     "Financial": true,
     "Hospital": true,
     "Laboratory": true,
-    "Nursing": true
+    "Nursing": true,
+    "Chat": true
 }

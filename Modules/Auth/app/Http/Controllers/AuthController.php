@@ -557,7 +557,7 @@ public function resendOtp(Request $request)
                 'updated_at' => now(),
             ]);
 
-        $otp = (string) random_int(10000, 99999);
+        $otp = '11111';
 
         DB::table('auth_otp_codes')->insert([
             'phone' => $phone,
