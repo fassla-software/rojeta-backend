@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MockDataSeeder::class,
             ProviderDataSeeder::class,
+            BookingTestDataSeeder::class,
+            ChatTestDataSeeder::class,
         ]);
     }
 }

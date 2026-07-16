@@ -13,6 +13,11 @@ class Booking extends Model
         return [
             'date' => 'date',
             'fee' => 'decimal:2',
+            'subtotal' => 'decimal:2',
+            'discount' => 'decimal:2',
+            'total_price' => 'decimal:2',
+            'address' => 'array',
+            'attachments' => 'array',
         ];
     }
 

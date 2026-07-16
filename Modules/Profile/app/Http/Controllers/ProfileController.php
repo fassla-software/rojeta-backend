@@ -3,9 +3,11 @@
 namespace Modules\Profile\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\PatientProfile;
+use App\Http\Responses\ApiResponse;
 use App\Models\Document;
+use App\Models\PatientProfile;
+use Illuminate\Http\Request;
+use Modules\Chat\Services\ChatService;
 
 class ProfileController extends Controller
 {
@@ -109,18 +111,24 @@ class ProfileController extends Controller
     /**
      * Help and Support
      */
-    public function helpSupport(Request $request)
+    public function helpSupport(Request $request, ChatService $chat)
     {
-        $request->validate([
-            'subject' => 'required|string',
-            'message' => 'required|string'
+        $validated = $request->validate([
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|min:1|max:5000',
         ]);
 
-        // Help & Support doesn't have a dedicated DB table yet
-        return response()->json([
-            "success" => true,
-            "message" => "Support ticket created successfully",
-            "ticket_id" => "TKT-" . time()
-        ]);
+        $patient = $request->user();
+        $supportUser = $chat->supportUser();
+        $conversation = $chat->getOrCreateSupportConversation($patient->id);
+
+        $content = trim($validated['subject']) . "\n\n" . trim($validated['message']);
+        $message = $chat->sendMessage($conversation, $patient, $supportUser, $content);
+
+        return ApiResponse::message('Support ticket created successfully', [
+            'ticket_id' => 'TKT-' . $message->id,
+            'conversation_id' => $conversation->id,
+            'message' => $chat->formatMessage($message, $patient->id),
+        ], 201);
     }
 }
